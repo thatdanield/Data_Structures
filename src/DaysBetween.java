@@ -21,6 +21,10 @@ public class DaysBetween
     System.out.println();
 		
     System.out.println("Enter the first date:");
+    if (!conIn.hasNextInt()) {
+      System.out.println("Illegal input was entered");
+      return;
+    }
     month = conIn.nextInt();
 	 day = conIn.nextInt();
     year = conIn.nextInt();
@@ -46,4 +50,5 @@ public class DaysBetween
       System.out.println(Math.abs(date1.lilian() - date2.lilian()));
     }
   }
+
 }

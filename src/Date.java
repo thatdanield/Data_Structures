@@ -72,7 +72,9 @@ public class Date
   public String toString()
   // Returns this date as a String.
   {
-    return(month + "/" + day + "/" + year);
+    String[] dates = {"January", "February", "March", "April", "May", "June", "July", "August", "September","October",
+    "November", "December"};
+    return(dates[month-1] + " " + day + ", " + year);
   }
 
   public Date inverseLilian(int lilian)
@@ -98,6 +100,8 @@ public class Date
             
     return new Date(months,days,years);
   }
-
+  public boolean valid() {
+    return ((((month==1)||(month==3)||(month==5)||(month==7)||(month==8)||(month==10)||(month==12))&&(day<=31))||((month==4)||(month==6)||(month==9)||(month==11))&&(day<=30)||(day<=28&&month==2)||(day<=29&&month==2&&(year%4==0)&&(year%100!=0)||(year%400==0)))&&(year>1582)||(year==1582&&(month>10 ||(month==10&&day>=14)));
+  }
 }
  

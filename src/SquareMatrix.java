@@ -1,5 +1,3 @@
-package SquareMatrix;
-
 public class SquareMatrix implements SquareMatrixInterface {
     int size;
     int[][] array;
@@ -8,7 +6,10 @@ public class SquareMatrix implements SquareMatrixInterface {
         this.size = size;
         this.array = array;
     }
-
+    public SquareMatrix(int[][] array) {
+        this.size = array.length;
+        this.array = array;
+    }
     public SquareMatrix(int size) {
         this.size = size;
         array = new int[size][size];
@@ -32,7 +33,7 @@ public class SquareMatrix implements SquareMatrixInterface {
         };
         return returnMatrix;
     }
-    public SquareMatrix clone(SquareMatrix other) {
+    public SquareMatrix copy() {
         SquareMatrix returnMatrix = new SquareMatrix(size);
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
@@ -50,7 +51,7 @@ public class SquareMatrix implements SquareMatrixInterface {
     public int getValue(int row, int col) {
         return array[row][col];
     }
-    public int fillValue(int value) {
+    public void fillValue(int value) {
         for (int[] array :
                 this.array) {
             for (int oldValue :
@@ -58,7 +59,6 @@ public class SquareMatrix implements SquareMatrixInterface {
                 oldValue = value;
             }
         }
-        return value;
     }
     public void makeZero() {
         for (int[] array :

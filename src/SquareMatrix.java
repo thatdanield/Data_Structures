@@ -52,24 +52,29 @@ public class SquareMatrix implements SquareMatrixInterface {
         return array[row][col];
     }
     public void fillValue(int value) {
-        for (int[] array :
-                this.array) {
-            for (int oldValue :
-                    array) {
-                oldValue = value;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                array[i][j] = value;
             }
         }
     }
     public void makeZero() {
-        for (int[] array :
-                this.array) {
-            for (int oldValue :
-                    array) {
-                oldValue = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                array[i][j] = 0;
             }
         }
     }
     public String toString() {
-        return array.toString();
+        String returnString = "";
+        for (int[] array :
+                this.array) {
+            for (int number :
+                    array) {
+                returnString += number;
+            }
+        }
+        return returnString;
+        
     }
 }

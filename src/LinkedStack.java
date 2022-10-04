@@ -45,7 +45,7 @@ public class LinkedStack<T> implements StackInterface<T>
 
     // removes the object at the top of this stack 
     // and returns that object as the value of this function
-    public T pop()
+    public T pop() throws StackUnderflowException
     {
         if(size()==0) {
             throw new StackUnderflowException();

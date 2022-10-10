@@ -15,6 +15,45 @@ public class ColumnPicker extends Robot
     
     public void countColumns()
     {
+        if(!nextToABeeper()){
+            int count = countColumn();
+            putBeepers(count);
+            turnLeft();
+            move();
+            turnLeft();
+            countColumns();
+        }
+
     }
-    
+    int countBeepers() {
+        if(nextToABeeper()) {
+            pickBeeper();
+            int count = countBeepers() + 1;
+            putBeeper();
+            return count;
+        } else {
+            return 0;
+        }
+    }
+    int countColumn(int height) {
+        int count = 0;
+        if(height<9) {
+            move();
+            count = countBeepers() + countColumn(height+1);
+            move();
+        } else {
+            turnLeft();
+            turnLeft();
+        }
+        return count;
+    }
+    int countColumn() {
+        return countColumn(1);
+    }
+    void putBeepers(int number) {
+        if(number>0) {
+            putBeeper();
+            putBeepers(number - 1);
+        }
+    }
 }

@@ -5,8 +5,8 @@ public class Driver
     {
         World.setVisible(true);
         //World.reset();
-        World.readWorld("BreadCrumbs");
-        World.setDelay(10);
+        World.readWorld("/Users/ddevadas/IdeaProjects/Data_Structures/src", "BreadCrumbs.kwld");
+        World.setDelay(2);
         World.setTrace(false);
         try {Thread.sleep(3000); } catch (Exception e){};
 

@@ -15,32 +15,43 @@ public class BreadCrumbFollower extends Robot
     public void travel()
     {
         int count = 0;
-        while(true) {
+        if(nextToABeeper()) {
+            //pickBeeper();
+        }
+        while(count<3) {
             boolean found = false;
             if (frontIsClear()) {
                 move();
 
                 if (nextToABeeper()) {
-                    pickBeeper();
+                    //pickBeeper();
                     found = true;
                     count = 0;
                 } else {
-                    turnLeft();
-                    turnLeft();
-                    move();
-                    turnLeft();
+                    if(count!=1) {
+                        turnLeft();
+                        turnLeft();
+                        move();
+                        turnLeft();
+                    } else {
+                        turnLeft();
+                        turnLeft();
+                        move();
+                    }
                 }
                 if (!found) {
                     count++;
                 }
             } else {
-                turnLeft();
-                turnLeft();
-                turnLeft();
+                if(count!=1) {
+                    turnLeft();
+                    turnLeft();
+                    turnLeft();
+                } else {
+                    turnLeft();
+                    turnLeft();
+                }
                 count++;
-            }
-            if(count>=4) {
-                break;
             }
         }
     }

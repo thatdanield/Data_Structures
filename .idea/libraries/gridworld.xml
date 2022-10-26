@@ -1,7 +1,6 @@
 <component name="libraryTable">
-  <library name="KarelJRobot">
+  <library name="gridworld">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/src/KarelJRobot.jar!/" />
       <root url="jar://$PROJECT_DIR$/src/gridworld.jar!/" />
     </CLASSES>
     <JAVADOC />

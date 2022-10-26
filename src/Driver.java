@@ -6,12 +6,13 @@ public class Driver
     {
         World.setVisible(true);
         //World.reset();
-        World.readWorld("/Users/ddevadas/IdeaProjects/Data_Structures/src", "RandomColumns.kwld");
-        World.setDelay(1);
+        World.readWorld("/Users/ddevadas/IdeaProjects/Data_Structures/src", "BreadCrumbs.kwld");
+        World.setDelay(10);
         World.setTrace(false);
-        try {Thread.sleep(8000); } catch (Exception e){};
+        try {Thread.sleep(3000); } catch (Exception e){};
 
-        ColumnPicker carol = new ColumnPicker(1,1,Directions.North,-1);
-        carol.countColumns();
+        BreadCrumbFollower gretel = new BreadCrumbFollower(1,1,Directions.East,0);
+        gretel.travel();
+        gretel.turnOff();
     }
 }

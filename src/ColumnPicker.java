@@ -3,7 +3,7 @@ import kareltherobot.*;
  * Counts the number of beepers in a column and puts the same
  * number of beepers at the base of the column
  * 
- * @author
+ * @author d
  * @version 
  */
 public class ColumnPicker extends Robot

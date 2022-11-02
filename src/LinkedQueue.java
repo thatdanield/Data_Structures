@@ -19,14 +19,13 @@ public class LinkedQueue<T> implements QueueInterface<T>{
 
     @Override
     public T add(T item) {
-        var currentNode = node;
-        if (currentNode != null) {
-            while (currentNode.getLink() != null) {
-                currentNode = currentNode.getLink();
-            }
-            currentNode.setLink(new LLNode<>(item));
-        } else {
+        LLNode<T> currentNode = node;
+        if(node==null) {
             node = new LLNode<>(item);
+            return item;
+        }
+        while (currentNode.getLink() != null) {
+            currentNode = currentNode.getLink();
         }
         return item;
     }
